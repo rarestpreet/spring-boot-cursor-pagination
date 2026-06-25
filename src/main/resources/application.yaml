@@ -4,7 +4,7 @@ spring:
 
   datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/cursor_pagination_db?createDatabaseIfNotExist=true
-    username: root
+    username: ${DB_USER}
     password: ${DB_PASS}
 
   jpa:
@@ -19,4 +19,4 @@ server:
   port: 8080
 
 prod:
-  host: ${localhost:PROD_HOST}
+  host: ${PROD_HOST:localhost}
