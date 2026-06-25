@@ -81,7 +81,7 @@ http://localhost:8080/index.html
 The frontend is accessible directly at:
 
 ```
-https://spring-boot-cursor-pagination.onrender.com/index.html
+https://spring-boot-cursor-pagination.onrender.com
 ```
 
 The API is reachable at:

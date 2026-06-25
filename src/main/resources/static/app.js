@@ -9,7 +9,7 @@
     'use strict';
 
     // ── Config ──────────────────────────────────────────
-    const API_BASE = 'http://localhost:8080/product/generate-feed';
+    const API_BASE = `product/generate-feed`;
     const PAGE_SIZE = 20;
 
     // ── DOM refs ────────────────────────────────────────
