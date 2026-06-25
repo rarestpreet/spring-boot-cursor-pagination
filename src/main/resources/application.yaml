@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Cursor_pagination
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/cursor_pagination_db?createDatabaseIfNotExist=true
+    username: root
+    password: ${DB_PASS}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+server:
+  port: 8080
+
+prod:
+  host: ${localhost:PROD_HOST}

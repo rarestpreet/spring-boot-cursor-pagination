@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Feed | Cursor Pagination</title>
+    <meta name="description" content="Browse products with infinite scrolling powered by cursor-based pagination.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span>ProductFeed</span>
+            </div>
+            <div class="header-controls">
+                <div class="filter-group">
+                    <label for="category-filter" class="filter-label">Category</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="NONE" selected>All Products</option>
+                        <option value="ELECTRONICS">Electronics</option>
+                        <option value="CLOTHING">Clothing</option>
+                        <option value="BOOKS">Books</option>
+                        <option value="BEAUTY">Beauty</option>
+                        <option value="SPORTS">Sports</option>
+                        <option value="HEALTH">Health</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <span id="product-count" class="stat-badge">0 products loaded</span>
+            <span id="feed-status" class="stat-badge stat-live">
+                <span class="live-dot"></span> Live Feed
+            </span>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="product-grid"></div>
+
+        <!-- Loading Skeleton -->
+        <div id="loading-indicator" class="loading-section" style="display: none;">
+            <div class="skeleton-grid">
+                <div class="skeleton-card"><div class="skeleton-bar skeleton-title"></div><div class="skeleton-bar skeleton-text"></div><div class="skeleton-bar skeleton-price"></div></div>
+                <div class="skeleton-card"><div class="skeleton-bar skeleton-title"></div><div class="skeleton-bar skeleton-text"></div><div class="skeleton-bar skeleton-price"></div></div>
+                <div class="skeleton-card"><div class="skeleton-bar skeleton-title"></div><div class="skeleton-bar skeleton-text"></div><div class="skeleton-bar skeleton-price"></div></div>
+                <div class="skeleton-card"><div class="skeleton-bar skeleton-title"></div><div class="skeleton-bar skeleton-text"></div><div class="skeleton-bar skeleton-price"></div></div>
+            </div>
+        </div>
+
+        <!-- Scroll Sentinel (IntersectionObserver target) -->
+        <div id="scroll-sentinel" class="scroll-sentinel"></div>
+
+        <!-- End of Feed -->
+        <div id="end-message" class="end-message" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="end-icon">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <p>You've reached the end of the feed</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-message" class="error-message" style="display: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="error-icon">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <p id="error-text">Something went wrong</p>
+            <button id="retry-btn" class="btn-retry">Retry</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
