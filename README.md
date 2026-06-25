@@ -76,18 +76,18 @@ http://localhost:8080/index.html
 
 ## Live Deployment
 
-> **Live URL:** `<deployment-url>`
+> **Live URL:** `https://spring-boot-cursor-pagination.onrender.com`
 
 The frontend is accessible directly at:
 
 ```
-<deployment-url>/index.html
+https://spring-boot-cursor-pagination.onrender.com/index.html
 ```
 
 The API is reachable at:
 
 ```
-<deployment-url>/product/generate-feed
+https://spring-boot-cursor-pagination.onrender.com/product/generate-feed
 ```
 
 ---
